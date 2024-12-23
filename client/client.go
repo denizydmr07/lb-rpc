@@ -18,12 +18,14 @@ func main() {
 	result, err := Add(1, 2)
 	if err != nil {
 		logger.Error("Error in Add", zap.Error(err))
+	} else {
+		logger.Info("Add result", zap.Float64("result", result))
 	}
-	logger.Info("Add result", zap.Float64("result", result))
 
 	result, err = Sub(1, 2)
 	if err != nil {
 		logger.Error("Error in Sub", zap.Error(err))
+	} else {
+		logger.Info("Sub result", zap.Float64("result", result))
 	}
-	logger.Info("Sub result", zap.Float64("result", result))
 }
